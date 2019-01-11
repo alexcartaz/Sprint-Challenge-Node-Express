@@ -17,8 +17,15 @@ module.exports = {
 	},
 	completed: ({completed}) => {
     if (completed != undefined && typeof completed != "boolean") {
-      throw new ValidationError('Project completed invlaid.');
+      throw new ValidationError('Project completed invalid.');
+    }
+    return true;
+  },
+  project_id: ({project_id}) => {
+    if (project_id != undefined && typeof project_id != "number") {
+      throw new ValidationError('Project ID must be invlaid.');
     }
     return true;
   }
+
 };
